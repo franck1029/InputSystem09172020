@@ -8,7 +8,11 @@ connectDB();
 //middleware
 app.use(express.urlencoded({ extended: false }));
 
-//app.get("/", (req, res) => res.send("API Running..."));
+app.get("/", (req, res) => res.send("API Running..."));
+
+//Routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/input", require("./routes/api/input"));
 
 const PORT = process.env.PORT || 5000;
 
